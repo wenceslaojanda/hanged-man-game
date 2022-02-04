@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Hanged</title>
+  </head>
+  <body>
+    <header>
+      <img src="./img/hangman.png" alt="">
+      <h1 class="titulo">Hanged man</h1>
+    </header>
+
+    <section class = "controls">
+      <button class="btns btn-start" id="start-game">START GAME</button>
+      <input class="text-input" type="text" id="input-new-word" placeholder="Write a new word" onfocusout="inputFocusOut()" onfocus="inputFocusIn()">
+      <button class="btns btn-add" id="new-word">ADD WORD</button> 
+      <span class='message'>"you must enter only letters without spaces"</span>
+      <button class="btns btn-reset" id="reset-game">REFRESH</button>
+    </section>
+   <section class= "cnv">
+      <canvas class="hanged" id="hanged" height="400px" width="600px"></canvas>
+    </section>
+
+    <footer id="footer">
+      <div class="social">
+        <a href="https://www.linkedin.com/in/wenceslaojanda/" target="_blank">
+          <img src="./img/icon-linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/wenceslaojanda" target="_blank">
+          <img src="./img/icon-github.svg" alt="GitHub">
+        </a>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/wenceslaojanda" target="_blank">
+          <img src="./img/icon-instagram.svg" alt="Instagram">
+        </a>
+      </div>
+      <div><a href="mailto:wenchojanda@gmail.com">&copy;Wenceslao Janda</a></div>
+    </footer>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal body -->
+          <div class="modal-body">
+          Do you want to play with the entered word?
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button id="btn-yes" type="button" class="btns">Yes</button>
+            <button id="btn-no" type="button" class="btns" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="ahorcado.js"></script>
+    <script src="canvas.js"></script>
+  </body>
+</html>
